@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
+
+Route::resource('empresa', 'EmpresaController')->except(['show'])->middleware('auth');
+Route::resource('usuario', 'UserController')->middleware('auth');
+
+Auth::routes();

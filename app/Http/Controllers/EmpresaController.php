@@ -78,6 +78,9 @@ class EmpresaController extends Controller
      */
     public function destroy($id)
     {
+        $empresa = Empresa::find($id);
+        $empresa->delete();
 
+        return redirect()->route('empresa.index');
     }
 }

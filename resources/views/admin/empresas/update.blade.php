@@ -66,6 +66,19 @@
                        required>
             @endcomponent
 
+            <div class="columns">
+                <div class="column">
+                    <strong>Activar o desactivar empresa</strong>
+                    <div class="field">
+                        <input name="activa" id="switchRoundedSuccess" type="checkbox" class="switch is-rounded is-success" {{$empresa->activa == 1?'checked':''}}>
+                        <label for="switchRoundedSuccess"></label>
+                    </div>
+                </div>
+                <div class="column">
+
+                </div>
+            </div>
+
             <hr>
             <div class="field">
                 <p class="control">

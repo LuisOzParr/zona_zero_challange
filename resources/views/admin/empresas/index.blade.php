@@ -20,6 +20,7 @@
                 <th>Estado</th>
                 <th>C.P.</th>
                 <th>Fecha de registro</th>
+                <th>Activa</th>
                 <th>Opciones</th>
             </tr>
             </thead>
@@ -35,6 +36,7 @@
                         <td>{{$empresa->estado}}</td>
                         <td>{{$empresa->cp}}</td>
                         <td>{{$empresa->created_at}}</td>
+                        <td>{{$empresa->activa == 1?'Si':'No'}}</td>
                         <td>
                             <form method="post" action="{{route('empresa.destroy', [$empresa->id])}}" id="empresaForDelete{{$empresa->id}}">
                                 @method('DELETE')

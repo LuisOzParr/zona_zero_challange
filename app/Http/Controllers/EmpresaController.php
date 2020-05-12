@@ -64,8 +64,18 @@ class EmpresaController extends Controller
      */
     public function update(EmpresaRequestForm $request, $id)
     {
+
         $empresa = Empresa::find($id);
-        $empresa->update($request->all());
+        $request->activa = $request->activa == null ? false : true;
+        $empresa->update([
+            "nombre" => $request->nombre,
+            "rfc" => $request->rfc,
+            "domicilio" => $request->domicilio,
+            "municipio" => $request->municipio,
+            "estado" => $request->estado,
+            "cp" => $request->cp,
+            "activa" => $request->activa,
+        ]);
 
         return redirect()->route('empresa.index');
     }
